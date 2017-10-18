@@ -2,17 +2,16 @@
 
 class Complement
   CONVERSION_MAP = {
-    C: :G,
-    G: :C,
-    T: :A,
-    A: :U
+    'C' => 'G',
+    'G' => 'C',
+    'T' => 'A',
+    'A' => 'U'
   }
 
   def self.of_dna(input)
     converted = input
       .upcase
       .chars
-      .map(&:to_sym)
       .map { |c| CONVERSION_MAP.dig(c) }
       .compact
       .join
