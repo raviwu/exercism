@@ -7,7 +7,7 @@ class Squares
     @numbers = (1..number).to_a
 
     @number_squares ||= @numbers.map do |num|
-      cached_square_of(num).nil? ? cache_square_of(num, num * num) : cached_square_of(num)
+      cached_square_of(num) || cache_square_of(num, num * num)
     end
   end
 
