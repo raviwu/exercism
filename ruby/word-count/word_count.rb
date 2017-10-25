@@ -1,4 +1,3 @@
-require 'pry'
 class Phrase
   def initialize(sentence)
     @sentence = sentence
@@ -14,7 +13,7 @@ class Phrase
   private
 
   def check_word_count
-    @sentence.downcase.scan(/\w+'*\w+|\d+/).each do |word|
+    @sentence.downcase.scan(/\b[\w']+\b/) do |word|
       @word_count[word] += 1
     end
   end
