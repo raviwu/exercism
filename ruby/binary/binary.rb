@@ -6,7 +6,7 @@ class Binary
 
     (0..bases.size - 1)
       .to_a
-      .inject(0) { |sum, index| sum += bases[index].to_i * (2**index) }
+      .inject(0) { |sum, index| sum + bases[index].to_i * (2**index) }
   end
 end
 
